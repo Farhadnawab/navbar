@@ -1,0 +1,53 @@
+@font-face {
+  font-family: 'Eina01-SemiBold';
+  src: url('webFonts/Eina01-SemiBold/font.woff2') format('woff2'), url('webFonts/Eina01-SemiBold/font.woff') format('woff');
+}
+@font-face {
+  font-family: 'Eina01-Regular';
+  src: url('webFonts/Eina01-Regular/font.woff2') format('woff2'), url('webFonts/Eina01-Regular/font.woff') format('woff');
+}
+
+html{
+  font-size: 16px; /* Base size of REM */
+}
+body{
+  margin: 0;
+  padding: 0;
+}
+
+/********** NAV BAR ************/
+/*******************************/
+.navbar{
+  position: relative;
+  background: #170F34;
+  top: auto;
+  padding: 4rem 0 1.625rem;
+  width: 100%;
+}
+.sticked .navbar{
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding-top: 1.625rem;
+}
+.navbar .nav > ul{
+  margin: 0;
+  padding: 0;
+  display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+  display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+  display: -ms-flexbox;      /* TWEENER - IE 10 */
+  display: -webkit-flex;     /* NEW - Chrome */
+  display: flex;             /* NEW, Spec - Opera 12.1, Firefox 20+ */
+  list-style: none;
+}
+.navbar .nav > ul > li{
+  padding: 0 1.5rem;
+}
+.navbar .nav > ul > li > a{
+  letter-spacing: 3px;
+  display: block;
+  align-items: center;
+  padding: 0 0 6px !important;
+  margin: 0 !important;
+  font-size: 0.8125rem;
+}
