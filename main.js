@@ -1,8 +1,8 @@
 (function ($) {
 
     /* Menu Toggle */
-    $(document).on("click","#menu-open, #menu-close",function(){
-        $('body').toggleClass("main-menu-active");
+    $(document).on("click","#hamburger-toggle-btn",function(){
+        $('body').toggleClass("hamburger-active");
     });
 
     /* Menu Dropdown Toggle */

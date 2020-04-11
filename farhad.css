@@ -13,7 +13,10 @@ html{
 body{
   margin: 0;
   padding: 0;
+  overflow-x: hidden;
 }
+.p-0{padding: 0;}
+.m-0{margin: 0;}
 
 /********** NAV BAR ************/
 /*******************************/
@@ -21,14 +24,18 @@ body{
   position: relative;
   background: #170F34;
   top: auto;
-  padding: 4rem 0 1.625rem;
+  padding: 0;
   width: 100%;
+  font-family: 'Eina01-Regular';
 }
-.sticked .navbar{
-  position: fixed;
-  top: 0;
-  left: 0;
-  padding-top: 1.625rem;
+.navbar > .container90{
+  padding-top: 0;
+  padding-bottom: 0;
+}
+.navbar .brand{
+  padding-top: 4rem;
+  padding-bottom: 1.625rem;
+  transition: padding ease 0.2s;
 }
 .navbar .nav > ul{
   margin: 0;
@@ -41,13 +48,247 @@ body{
   list-style: none;
 }
 .navbar .nav > ul > li{
-  padding: 0 1.5rem;
+  padding: 4rem 1.5rem 1.625rem;
+  transition: padding ease 0.2s;
 }
 .navbar .nav > ul > li > a{
   letter-spacing: 3px;
   display: block;
   align-items: center;
-  padding: 0 0 6px !important;
+  padding: 6px 0 !important;
   margin: 0 !important;
+  font-family: 'Eina01-SemiBold';
   font-size: 0.8125rem;
+}
+.navbar .nav > ul ul.dropdown{
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  padding: 0;
+
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity ease 0.3s;
+}
+.navbar .nav ul > li:hover > ul.dropdown{
+  visibility: visible;
+  opacity: 1;
+}
+.navbar .nav > ul ul.dropdown:before{
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -1000%;
+  width: 10000%;
+  height: 100%;
+  z-index: -1;
+  background: #170F34;
+}
+.navbar .nav > ul ul.dropdown > li{
+  padding: 0;
+}
+.navbar .nav > ul ul.dropdown > li > a{
+  display: block;
+  min-height: 250px;
+  color: #fff;
+  text-decoration: none;
+  padding: 1.5rem;
+  transition: background ease 0.2s;
+}
+.navbar .nav > ul ul.dropdown > li > a .icon{
+  display: block;
+}
+.navbar .nav > ul ul.dropdown > li > a .title{
+  display: block;
+  margin-top: 2rem;
+  font-family: 'Eina01-SemiBold';
+  font-size: 1rem;
+  padding-right: 1.5rem;
+  text-transform: capitalize;
+}
+.navbar .nav > ul ul.dropdown > li > a .desc{
+  display: block;
+  margin-top: 1rem;
+  opacity: 0.54;
+  font-size: 0.6875rem;
+  text-transform: none;
+  padding-right: 1.5rem;
+  line-height: 1.5;
+}
+.navbar .nav > ul ul.dropdown > li > a:hover{
+  background: #3700FF;
+}
+/* Hamburger Menu */
+.hamburger-menu{
+  padding-top: 4rem;
+  position: relative;
+  display: none;
+}
+.hamburger-menu .mobile{
+  display: none;
+}
+.hamburger-close-btn{
+  position: absolute;
+  top: 2.5rem;
+  right: 0;
+}
+.hamburger-menu > .row > div{
+  min-height: 250px;
+  padding-bottom: 1rem;
+  padding-right: 2.5rem;
+  margin-right: 0.5rem;
+}
+.hamburger-menu > .row > div:last-child{
+  margin-right: 0;
+}
+.hamburger-menu > .row > div:nth-child(2){
+  max-width: 500px;
+}
+.hamburger-menu .title{
+  font-family: 'Eina01-SemiBold';
+  font-size: 0.8125rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.45);
+  border-bottom: 1px solid rgba(255,255,255,0.25);
+  padding: 0.625rem 0;
+}
+.hamburger-menu .logo{
+  display: block;
+}
+.hamburger-menu .logo img{
+  height: 16px;
+  width: auto;
+}
+.hamburger-menu .title{
+  line-height: 20px;
+}
+.hamburger-menu ul{
+  list-style: none;
+  margin: 0;
+}
+.hamburger-menu > .row > div > ul{
+  padding: 0;
+}
+.hamburger-menu ul li{
+  display: block;
+  margin-top: 1.0625rem;
+}
+.hamburger-menu ul li a{
+  font-family: 'Eina01-SemiBold';
+  font-size: 0.8125rem;
+  font-weight: 400;
+  color: #fff;
+  text-decoration: none;
+  text-transform: none;
+  letter-spacing: 0;
+}
+.hamburger-menu ul li a:hover{
+  color: #FF4835;
+}
+.hamburger-menu ul li.social a{
+  margin-right: 10px;
+}
+.hamburger-menu ul.language-selector img{
+  margin-right: 10px;
+}
+
+/* Sticked */
+.sticked .navbar{
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+.sticked .navbar .brand,
+.sticked .navbar .nav > ul > li{
+  padding-top: 1.625rem;
+}
+
+/* Show / Hide Menus */
+body.hamburger-active #hamburger-menu{
+  display: block;
+}
+body.hamburger-active #basic-menu{
+  display: none;
+}
+
+/* Responsive */
+@media only screen and (max-width: 75em){
+  .middle-max-lg{
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+  }
+  .navbar .brand,
+  .navbar .nav > ul > li{
+    padding-top: 1rem !important;
+    padding-bottom: 1rem;
+  }
+  .navbar .nav > ul > li:not(.phone-icon):not(.hamburger-icon){
+    display: none;
+  }
+  .navbar .nav > ul > li:last-child{
+    padding-right: 0;
+  }
+  
+  .hamburger-menu{
+    padding-top: 2rem;
+  }
+  .hamburger-close-btn{
+    top: 1rem;
+  }
+  .hamburger-menu > .row{
+    max-width: 750px;
+  }
+  .hamburger-menu > .row > div{
+    margin-right: 0;
+  }
+  .hamburger-menu > .row > div:nth-child(2){
+    max-width: 100%;
+  }
+}
+@media only screen and (max-width: 480px){
+
+  .navbar .brand, .navbar .nav > ul > li {
+    padding-top: 0.8rem !important;
+    padding-bottom: 0.8rem;
+  }
+  .navbar .nav > ul > li:last-child{
+    padding-left: 0;
+  }
+
+  .hamburger-menu .desktop{
+    display: none;
+  }
+  .hamburger-menu .mobile{
+    display: block;
+  }
+  
+  .hamburger-menu{
+    text-align: center;
+    height: 100vh;
+  }
+  .hamburger-menu > .row > div{
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .hamburger-menu ul li{
+    margin-top: 2.1875rem;
+  }
+  .hamburger-menu ul li a{
+    font-size: 1.375rem;
+  }
+  .hamburger-menu ul li.social img{
+    width: 24px;
+  }
+  .hamburger-menu .logo{
+    position: absolute;
+    bottom: 60px;
+    left: 0;
+    right: 0;
+  }
 }

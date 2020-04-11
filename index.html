@@ -11,68 +11,243 @@
 
     <header id="navbar" class="navbar">
         <div class="container90">
-            <div class="row middle-xs">
+            <!-- Basic Menu -->
+            <div class="row middle-xs" id="basic-menu">
                 <div>
+                    <!-- Logo -->
                     <a class="brand" href="/">
                         <img id="fleche" src="slidor.svg" alt="Slidor logo" />
                     </a>
                 </div>
                 <div class="col-xs">
+                    <!-- Menu Start -->
                     <nav class="nav">
-                        <ul>
+                        <ul class="middle-max-lg">
                             <li>
                                 <a href="/Productions" class="link">Productions</a>
                             </li>
                             <li>
                                 <a href="/Agency" class="link">Services</a>
+
+                                <ul class="dropdown row">
+                                    <li class="col-xs-2">
+                                        <a href="javascript:void(0)">
+                                            <img class="icon" src="shield.svg" />
+                                            <span class="title">
+                                                Présentations<br/> événementielles
+                                            </span>
+                                            <span class="desc">
+                                                Nous créons des supports dynamiques et impactants qui permettent à vos équipes de convertir leurs prospects.
+                                            </span>
+                                        </a>
+                                    </li>
+                                    <li class="col-xs-2">
+                                        <a href="javascript:void(0)">
+                                            <img class="icon" src="shield.svg" />
+                                            <span class="title">
+                                                Présentations<br/> événementielles
+                                            </span>
+                                            <span class="desc">
+                                                Nous créons des supports dynamiques et impactants qui permettent à vos équipes de convertir leurs prospects.
+                                            </span>
+                                        </a>
+                                    </li>
+                                    <li class="col-xs-2">
+                                        <a href="javascript:void(0)">
+                                            <img class="icon" src="shield.svg" />
+                                            <span class="title">
+                                                Présentations<br/> événementielles
+                                            </span>
+                                            <span class="desc">
+                                                Nous créons des supports dynamiques et impactants qui permettent à vos équipes de convertir leurs prospects.
+                                            </span>
+                                        </a>
+                                    </li>
+                                    <li class="col-xs-2">
+                                        <a href="javascript:void(0)">
+                                            <img class="icon" src="shield.svg" />
+                                            <span class="title">
+                                                Présentations<br/> événementielles
+                                            </span>
+                                            <span class="desc">
+                                                Nous créons des supports dynamiques et impactants qui permettent à vos équipes de convertir leurs prospects.
+                                            </span>
+                                        </a>
+                                    </li>
+                                    <li class="col-xs-2">
+                                        <a href="javascript:void(0)">
+                                            <img class="icon" src="shield.svg" />
+                                            <span class="title">
+                                                Présentations<br/> événementielles
+                                            </span>
+                                            <span class="desc">
+                                                Nous créons des supports dynamiques et impactants qui permettent à vos équipes de convertir leurs prospects.
+                                            </span>
+                                        </a>
+                                    </li>
+                                    <li class="col-xs-2">
+                                        <a href="javascript:void(0)">
+                                            <img class="icon" src="shield.svg" />
+                                            <span class="title">
+                                                Présentations<br/> événementielles
+                                            </span>
+                                            <span class="desc">
+                                                Nous créons des supports dynamiques et impactants qui permettent à vos équipes de convertir leurs prospects.
+                                            </span>
+                                        </a>
+                                    </li>
+                                </ul>
                             </li>
                             <li>
                                 <a href="/Freebies" class="link">Agence</a>
                             </li>
-                            <li>
+                            <li class="phone-icon">
                                 <a href="/Contact"><img src="phone.svg" /></a>
                             </li>
                             <li>
                                 <a href="/Contact" class="link" rel="noopener">Contact</a>
                             </li>
-                            <li>
-                                <a href="javascript:void(0)" id="hamburger"><img src="hamburger.svg" /></a>
+                            <li class="hamburger-icon">
+                                <a href="javascript:void(0)" id="hamburger-toggle-btn"><img src="hamburger.svg" /></a>
                             </li>
                         </ul>
-
-                        <div class="ham">
-                            <div class="line one"></div>
-                            <div class="line two"></div>
-                            <div class="line three"></div>
-                        </div>
                     </nav>
                     <!-- END .nav -->
-                    <div class="sub-menu row middle-xs center-xs closed">
+                </div>
+            </div>
+
+            <!-- Hamburger Menu -->
+            <div class="hamburger-menu" id="hamburger-menu">
+                <a href="javascript:void(0)" class="hamburger-close-btn" id="hamburger-toggle-btn"><img src="white_close.svg" /></a>
+
+                <!-- Desktop -->
+                <div class="row desktop">
+                    <div class="col-xs-4 col-lg-2">
+                        
+                        <div class="title">
+                            <a href="/" class="logo"><img src="slidor.svg" alt="Slidor logo" /></a>
+                        </div>
                         <ul>
                             <li>
-                                <a href="/Productions" class="navlink link">Productions</a>
+                                <a href="javascript:void(0)">Productions</a>
                             </li>
                             <li>
-                                <a href="/Agency" class="navlink link">Agence</a>
+                                <a href="javascript:void(0)">Agence</a>
                             </li>
                             <li>
-                                <a href="/Freebies" class="navlink link">Ressources</a>
+                                <a href="javascript:void(0)">Ressources gratuites</a>
                             </li>
                             <li>
-                                <a href="/Contact" class="navlink link">Contact</a>
-                            </li>
-                            <li>
-                                <a href="https://slidor.workable.com/" target="_blank" class="navlink link" rel="noopener">Jobs</a>
-                            </li>
-                            <li>
-                                <a href="/Mentions" class="navlink link">Copyright</a>
-                            </li>
-                            <li>
-                                <a href="tel:+33185091738" class="navlink link">+33 1 85 09 17 38</a>
+                                <a href="javascript:void(0)">Jobs</a>
                             </li>
                         </ul>
                     </div>
-                    <!-- END .sub-menu -->
+                    <div class="col-xs-8 col-lg-6">
+                        <div class="title">
+                            Services
+                        </div>
+                        <div class="row m-0 between-xs">
+                            <ul class="p-0">
+                                <li>
+                                    <a href="javascript:void(0)">Présentations événementielles</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)">Supports de formation</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)">Supports commerciaux</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)">Conception rédaction</a>
+                                </li>
+                            </ul>
+                            <ul class="p-0">
+                                <li>
+                                    <a href="javascript:void(0)">Pitchdeck, levées de fonds</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)">Templates PowerPoint</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)">Présentations financières</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)">Réponses à appel d'offres</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-xs-offset-4 col-xs-4 col-lg-offset-0 col-lg-2">
+                        <div class="title">
+                            Contact
+                        </div>
+                        <ul>
+                            <li>
+                                <a href="tel:0140404040">01 40 40 40 40</a>
+                            </li>
+                            <li>
+                                <a href="mailto:hello@slidor.fr">hello@slidor.fr</a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)">Mentions légales</a>
+                            </li>
+                            <li class="social">
+                                <a href="javascript:void(0)"><img src="logo-linkedin.svg"></a>
+                                <a href="javascript:void(0)"><img src="logo-instagram.svg"></a>
+                                <a href="javascript:void(0)"><img src="logo-dribbble.svg"></a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-xs-4 col-lg-2">
+                        <div class="title">
+                            LANGUE
+                        </div>
+                        <ul class="language-selector">
+                            <li>
+                                <a href="javascript:void(0)"><img src="france.svg">Français</a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)"><img src="uk.svg">English</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Mobile -->
+                <div class="row mobile">
+                    <div class="col-xs-12">
+                        
+                        <ul>
+                            <li>
+                                <a href="javascript:void(0)">Contact</a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)">Productions</a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)">Services</a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)">Agence</a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)">Ressources</a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)">Jobs</a>
+                            </li>
+                            <li>
+                                <a href="tel:33140404040">+33 1 40 40 40 40</a>
+                            </li>
+                            <li class="social">
+                                <a href="javascript:void(0)"><img src="logo-linkedin.svg"></a>
+                                <a href="javascript:void(0)"><img src="logo-instagram.svg"></a>
+                                <a href="javascript:void(0)"><img src="logo-dribbble.svg"></a>
+                            </li>
+                        </ul>
+                        
+                        <a href="/" class="logo"><img src="slidor.svg" alt="Slidor logo" /></a>
+                    </div>
                 </div>
             </div>
         </div>
