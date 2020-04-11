@@ -1,13 +1,8 @@
 (function ($) {
 
-    /* Menu Toggle */
+    /* Hamburger Toggle */
     $(document).on("click","#hamburger-toggle-btn",function(){
         $('body').toggleClass("hamburger-active");
-    });
-
-    /* Menu Dropdown Toggle */
-    $(document).on("click","ul.menu-links li a",function(){
-        $(this).closest("li").toggleClass("expanded");
     });
 
     /** Sticky Header **/

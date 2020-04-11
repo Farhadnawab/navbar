@@ -272,6 +272,12 @@ body.hamburger-active #basic-menu{
     text-align: center;
     height: 100vh;
   }
+  .hamburger-close-btn {
+    top: 1.5rem;
+  }
+  .hamburger-close-btn img{
+    width: 25px;
+  }
   .hamburger-menu > .row > div{
     padding-left: 0;
     padding-right: 0;
