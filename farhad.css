@@ -17,12 +17,12 @@ body{
 }
 .p-0{padding: 0;}
 .m-0{margin: 0;}
+.text-left{text-align: left;}
 
 /********** NAV BAR ************/
 /*******************************/
 .navbar{
   position: relative;
-  background: #170F34;
   top: auto;
   padding: 0;
   width: 100%;
@@ -35,7 +35,19 @@ body{
 .navbar .brand{
   padding-top: 4rem;
   padding-bottom: 1.625rem;
+  display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+  display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+  display: -ms-flexbox;      /* TWEENER - IE 10 */
+  display: -webkit-flex;     /* NEW - Chrome */
+  display: flex;             /* NEW, Spec - Opera 12.1, Firefox 20+ */
+  align-items: center;
   transition: padding ease 0.2s;
+}
+.navbar .brand img:first-child{
+  margin-right: 10px;
+}
+.navbar .brand img:last-child{
+  transition: all ease 0.5s;
 }
 .navbar .nav > ul{
   margin: 0;
@@ -202,18 +214,42 @@ body{
   position: fixed;
   top: 0;
   left: 0;
+  background: #170F34;
 }
 .sticked .navbar .brand,
 .sticked .navbar .nav > ul > li{
   padding-top: 1.625rem;
 }
+.sticked .navbar .brand img:first-child{
+  height: 40px;
+}
+.sticked .navbar .brand img:last-child{
+  opacity: 0;
+  transform: translateX(50%);
+}
 
 /* Show / Hide Menus */
+body.hamburger-active .navbar{
+  background: #170F34;
+}
 body.hamburger-active #hamburger-menu{
   display: block;
 }
 body.hamburger-active #basic-menu{
   display: none;
+}
+
+/* Nav Text Color Change */
+@media only screen and (min-width: 75em){ /* Only for desktop */
+
+  /* When not scrolled and has blue text class */
+  body:not(.sticked) .navbar.blue-text, 
+  body:not(.sticked) .navbar.blue-text svg path, 
+  body:not(.sticked) .navbar.blue-text svg line {
+    color: #3700FF;
+    fill: #3700FF;
+    stroke: #3700FF;
+  }
 }
 
 /* Responsive */
@@ -249,6 +285,10 @@ body.hamburger-active #basic-menu{
   }
   .hamburger-menu > .row > div:nth-child(2){
     max-width: 100%;
+  }
+
+  .sticked .navbar .brand img:first-child{
+    height: 30px;
   }
 }
 @media only screen and (max-width: 480px){
