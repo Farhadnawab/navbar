@@ -27,6 +27,7 @@ body{
   padding: 0;
   width: 100%;
   font-family: 'Eina01-Regular';
+  transition: all ease 0.6s;
 }
 .navbar > .container90{
   padding-top: 0;
@@ -45,6 +46,7 @@ body{
 }
 .navbar .brand img:first-child{
   margin-right: 10px;
+  height: 38px;
 }
 .navbar .brand img:last-child{
   transition: all ease 0.5s;
@@ -71,6 +73,22 @@ body{
   margin: 0 !important;
   font-family: 'Eina01-SemiBold';
   font-size: 0.8125rem;
+  line-height: 1.5;
+  position: relative;
+}
+.navbar .nav > ul > li > a.btn-orange:after{
+  content: "";
+  top: 0;
+  bottom: 0;
+  left: -17px;
+  right: -17px;
+  background: #FF4835;
+  border-radius: 3px;
+  transition: background 0.2s;
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+  transition: opacity ease 0.3s;
 }
 .navbar .nav > ul ul.dropdown{
   position: absolute;
@@ -90,7 +108,8 @@ body{
   visibility: visible;
   opacity: 1;
 }
-.navbar .nav > ul ul.dropdown:before{
+.navbar .nav ul > li.has-dropdown:hover:before, 
+.navbar .nav ul > li.has-dropdown:hover > ul.dropdown:before{
   content: "";
   position: absolute;
   top: 0;
@@ -137,8 +156,28 @@ body{
 /* Hamburger Menu */
 .hamburger-menu{
   padding-top: 4rem;
-  position: relative;
-  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  -webkit-transform: translateY(-100%);
+  -moz-transform: translateY(-100%);
+  transform: translateY(-100%);
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition: all ease 0.5s;
+  -moz-transition: all ease 0.5s;
+  transition: all ease 0.5s;
+}
+.hamburger-menu:before{
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: -1000%;
+  width: 10000%;
+  height: 100%;
+  background: #170F34;
 }
 .hamburger-menu .mobile{
   display: none;
@@ -221,19 +260,26 @@ body{
   padding-top: 1.625rem;
 }
 .sticked .navbar .brand img:first-child{
-  height: 40px;
+  height: 45px;
 }
 .sticked .navbar .brand img:last-child{
   opacity: 0;
   transform: translateX(50%);
 }
+.sticked .navbar .nav > ul > li > a.btn-orange{
+  color: #fff;
+}
+.sticked .navbar .nav > ul > li > a.btn-orange:after{
+  opacity: 1;
+}
 
 /* Show / Hide Menus */
-body.hamburger-active .navbar{
-  background: #170F34;
-}
 body.hamburger-active #hamburger-menu{
-  display: block;
+  -webkit-transform: translate(0%);
+  -moz-transform: translate(0%);
+  transform: translate(0%);
+  opacity: 1;
+  visibility: visible;
 }
 body.hamburger-active #basic-menu{
   display: none;
@@ -288,7 +334,7 @@ body.hamburger-active #basic-menu{
   }
 
   .sticked .navbar .brand img:first-child{
-    height: 30px;
+    height: 38px;
   }
 }
 @media only screen and (max-width: 480px){
